@@ -1,0 +1,1 @@
+<img class="size-8" src="https://laracasts.com/images/logo/logo-triangle.svg" alt="Your Company"> 
