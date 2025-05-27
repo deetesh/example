@@ -167,7 +167,7 @@ Route::post('/register', function () {
 });
 
 // register, methode
-Route::pos t('/register', function () {
+Route::post('/register', function () {
 
    $aUser = request()->validate([
         'name' => ['required', 'min:3'],
