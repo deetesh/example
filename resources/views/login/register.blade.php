@@ -16,14 +16,14 @@
       <div>
         <x-label>Username</x-label>
         <div class="mt-2"> 
-          <x-input name="name" id="name" placeholder="John"></x-input>
+          <x-input name="name" id="name" placeholder="John" :value="old('name')"></x-input>
           <x-error input_name='name'/>
         </div>
       </div>
       <div>
         <x-label>Email</x-label>
         <div class="mt-2"> 
-          <x-input  name="email" id="email" placeholder="example@example.com"></x-input>
+          <x-input  name="email" id="email" placeholder="example@example.com" :value="old('email')"></x-input>
           <x-error input_name='email'/>
         </div>
       </div>

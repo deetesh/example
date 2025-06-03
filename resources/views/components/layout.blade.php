@@ -23,7 +23,6 @@ Add x-layout to use the component -->
             <div class="shrink-0">
               <x-logo></x-logo>
             </div>
-
             @auth
               <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
@@ -48,8 +47,16 @@ Add x-layout to use the component -->
               <!-- Profile dropdown -->
               <div class="relative ml-3">
                 <div class="ml-10 flex items-baseline space-x-4">
-                  <x-new-nav-link href="/login" :active="request()->is('login')">Login</x-new-nav-link>
+                @guest
+                  <x-new-nav-link href="/" :active="request()->is('login')">Login</x-new-nav-link>
                   <x-new-nav-link href="/register" :active="request()->is('register')">Register</x-new-nav-link>
+                @endguest
+                @auth 
+                  <form method="POST" action="/logout">
+                    @csrf
+                    <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Log Out</button>
+                  </form>
+                @endauth
                 </div>
               </div>
             </div>
@@ -84,7 +91,7 @@ Add x-layout to use the component -->
         <div class="border-t border-gray-700 pt-4 pb-3">
           <div class="flex items-center px-5">
             <div class="shrink-0">
-                <x-new-nav-link href="/login" :active="request()->is('login')">Login</x-new-nav-link>
+                <x-new-nav-link href="/" :active="request()->is('login')">Login</x-new-nav-link>
                 <x-new-nav-link href="/register" :active="request()->is('register')">Register</x-new-nav-link>
              </div>
             <div class="ml-3">
